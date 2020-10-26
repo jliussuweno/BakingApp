@@ -1,4 +1,4 @@
-package com.bca.bakingapp;
+package com.bca.bakingapp.adapter;
 
 import android.content.Context;
 import android.util.Log;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bca.bakingapp.R;
+import com.bca.bakingapp.model.Ingredient;
+
 import java.util.List;
 
 public class IngredientsListAdapter extends RecyclerView.Adapter<IngredientsListAdapter.IngredientViewHolder> {
@@ -17,7 +20,7 @@ public class IngredientsListAdapter extends RecyclerView.Adapter<IngredientsList
     private final LayoutInflater mInflater;
     private List<Ingredient> mIngredients;
 
-    IngredientsListAdapter(Context context){
+    public IngredientsListAdapter(Context context){
         mInflater = LayoutInflater.from(context);
     }
 
@@ -33,13 +36,13 @@ public class IngredientsListAdapter extends RecyclerView.Adapter<IngredientsList
         if (mIngredients != null){
             Ingredient current = mIngredients.get(position);
             Log.d("TAG", "onBindViewHolder: " + current.getIngre());
-            holder.nameItemView.setText("-" + current.getIngre() + " : " + current.getQuantity() + " " + current.getMeasure());
+            holder.nameItemView.setText("- " + current.getIngre() + " : " + current.getQuantity() + " " + current.getMeasure());
         } else {
-            holder.nameItemView.setText("No Task");
+            holder.nameItemView.setText("No Recipe");
         }
     }
 
-    void setmIngredients(List<Ingredient> ingredients){
+    public void setmIngredients(List<Ingredient> ingredients){
         mIngredients = ingredients;
         notifyDataSetChanged();
     }

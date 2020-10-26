@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.bca.roomwordssample"
+        applicationId "com.bca.bakingapp"
         minSdkVersion 28
         targetSdkVersion 30
         versionCode 1

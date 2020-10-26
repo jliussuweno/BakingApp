@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:background="@color/colorScreenBackground">
 
 <androidx.constraintlayout.widget.ConstraintLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DescriptionActivity">
+    tools:context=".ui.DescriptionActivity">
 
     <TextView
         android:id="@+id/textViewName"
@@ -18,6 +19,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="NameRecipe"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="28sp"
         app:layout_constraintEnd_toStartOf="@+id/toggleButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Number Of Servings :"
+        android:textColor="@color/colorTextSecondary"
         app:layout_constraintStart_toStartOf="@+id/textViewName"
         app:layout_constraintTop_toBottomOf="@+id/textViewName" />
 
@@ -38,6 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Ingredients :"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="@+id/textViewServings"
         app:layout_constraintTop_toBottomOf="@+id/textViewServings" />
 
@@ -58,6 +65,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Steps :"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="@+id/recyclerViewIngredients"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewIngredients" />
 
@@ -89,9 +99,12 @@
     <com.google.android.exoplayer2.ui.PlayerView
         android:id="@+id/exoplayerView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
+        android:background="@color/exo_black_opacity_70"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

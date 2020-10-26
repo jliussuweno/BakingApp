@@ -1,4 +1,4 @@
-package com.bca.bakingapp;
+package com.bca.bakingapp.model;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

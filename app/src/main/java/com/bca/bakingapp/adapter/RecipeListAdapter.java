@@ -1,4 +1,4 @@
-package com.bca.bakingapp;
+package com.bca.bakingapp.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bca.bakingapp.R;
+import com.bca.bakingapp.callback.RecipeCallback;
+import com.bca.bakingapp.model.Recipe;
+
 import java.util.List;
 
 public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.RecipeViewHolder> {
@@ -17,14 +21,14 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
     private List<Recipe> mRecipes;
     private RecipeCallback callback = null;
 
-    RecipeListAdapter(Context context){
+    public RecipeListAdapter(Context context){
         mInflater = LayoutInflater.from(context);
     }
 
     @NonNull
     @Override
     public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
+        View itemView = mInflater.inflate(R.layout.recipe_item, parent, false);
         return new RecipeViewHolder(itemView);
     }
 
@@ -46,12 +50,12 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.Re
         }
     }
 
-    void setmRecipes(List<Recipe> recipes){
+    public void setmRecipes(List<Recipe> recipes){
         mRecipes = recipes;
         notifyDataSetChanged();
     }
 
-    void setCallback(RecipeCallback mCallback) {
+    public void setCallback(RecipeCallback mCallback) {
         callback = mCallback;
     }
     @Override

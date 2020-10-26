@@ -1,4 +1,4 @@
-package com.bca.bakingapp;
+package com.bca.bakingapp.model;
 
 public class Ingredient {
 

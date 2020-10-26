@@ -1,4 +1,4 @@
-package com.bca.bakingapp;
+package com.bca.bakingapp.viewmodel;
 
 import android.app.Application;
 import android.content.Context;
@@ -13,6 +13,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bca.bakingapp.database.RecipeRepository;
+import com.bca.bakingapp.model.Recipe;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,7 +38,7 @@ public class RecipeViewModel extends AndroidViewModel {
         mRecipes = mRepository.getmFavoriteRecipes();
     }
 
-    LiveData<List<Recipe>> getmRecipes(){
+    public LiveData<List<Recipe>> getmRecipes(){
         return mRecipes;
     }
 

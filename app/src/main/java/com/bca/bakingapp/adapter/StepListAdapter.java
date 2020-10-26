@@ -1,6 +1,7 @@
-package com.bca.bakingapp;
+package com.bca.bakingapp.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bca.bakingapp.R;
+import com.bca.bakingapp.callback.StepCallback;
+import com.bca.bakingapp.model.Step;
+
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 public class StepListAdapter extends RecyclerView.Adapter<StepListAdapter.StepViewHolder> {
 
@@ -17,7 +24,7 @@ public class StepListAdapter extends RecyclerView.Adapter<StepListAdapter.StepVi
     private List<Step> mSteps;
     private StepCallback callback = null;
 
-    StepListAdapter(Context context){
+    public StepListAdapter(Context context){
         mInflater = LayoutInflater.from(context);
     }
 
@@ -37,6 +44,7 @@ public class StepListAdapter extends RecyclerView.Adapter<StepListAdapter.StepVi
                 @Override
                 public void onClick(View v) {
                     if (callback != null){
+                        Log.d(TAG, "onClick: ");
                         callback.stepPressed(current);
                     }
                 }
@@ -46,12 +54,12 @@ public class StepListAdapter extends RecyclerView.Adapter<StepListAdapter.StepVi
         }
     }
 
-    void setmSteps(List<Step> steps){
+    public void setmSteps(List<Step> steps){
         mSteps = steps;
         notifyDataSetChanged();
     }
 
-    void setCallback(StepCallback mCallback) {
+    public void setCallback(StepCallback mCallback) {
         callback = mCallback;
     }
     @Override
