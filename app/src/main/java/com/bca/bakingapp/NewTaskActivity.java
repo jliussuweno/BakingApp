@@ -1,4 +1,4 @@
-package com.bca.roomwordssample;
+package com.bca.bakingapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
